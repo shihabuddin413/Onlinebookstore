@@ -1,0 +1,12 @@
+{
+  "name": "online-bookstore",
+  "version": "1.0.0",
+  "description": "Online Bookstore Data Interchange with XML, XSD, JSON and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

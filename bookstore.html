@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Inventory</title>
+    <!-- Visual styling matching the assignment requirements in Times New Roman -->
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 40px;
+            color: #000;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 18px;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+        .book-title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bookstore Inventory</h1>
+    
+    <!-- Container for dynamic inventory listing -->
+    <ul id="inventory-list"></ul>
+
+    <script>
+        /**
+         * JSON Data Structure representing the bookstore's inventory.
+         * Contains an array of books with title, nested author, publication year,
+         * detailed publisher information, and boolean availability.
+         */
+        const bookstoreData = {
+          "books": [
+            {
+              "title": "The Great Gatsby",
+              "author": { "firstName": "F. Scott", "lastName": "Fitzgerald" },
+              "publicationYear": 1925,
+              "details": { "publisher": "Charles Scribner's Sons", "pageCount": 218 },
+              "available": true
+            },
+            {
+              "title": "To Kill a Mockingbird",
+              "author": { "firstName": "Harper", "lastName": "Lee" },
+              "publicationYear": 1960,
+              "details": { "publisher": "J.B. Lippincott & Co.", "pageCount": 281 },
+              "available": true
+            },
+            {
+              "title": "1984",
+              "author": { "firstName": "George", "lastName": "Orwell" },
+              "publicationYear": 1949,
+              "details": { "publisher": "Secker & Warburg", "pageCount": 328 },
+              "available": false
+            }
+          ]
+        };
+
+        /**
+         * Parses the JSON inventory and dynamically constructs the DOM list items.
+         */
+        function renderInventory() {
+            const listContainer = document.getElementById('inventory-list');
+            
+            bookstoreData.books.forEach(book => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span class="book-title">${book.title}</span><br>
+                    Author: ${book.author.firstName} ${book.author.lastName}<br>
+                    Publication Year: ${book.publicationYear}<br>
+                    Publisher: ${book.details.publisher}<br>
+                    Page Count: ${book.details.pageCount}<br>
+                    Available: ${book.available ? 'Yes' : 'No'}
+                `;
+                listContainer.appendChild(listItem);
+            });
+        }
+
+        // Execute rendering once HTML document is loaded
+        window.addEventListener('DOMContentLoaded', renderInventory);
+    </script>
+</body>
+</html>
