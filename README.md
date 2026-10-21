@@ -8,15 +8,20 @@ This project demonstrates data interchange between a server and client using bot
 ## Project Structure
 ```text
 OnlineBookstore/
-├── server.js               # Node.js Express server with JSON and XML endpoints
-├── package.json            # Project manifest and dependencies
-├── README.md               # Project documentation
+├── server.js                        # Node.js Express server with JSON and XML endpoints
+├── package.json                     # Project manifest and dependencies
+├── README.md                        # Project documentation
+├── LICENSE                          # MIT License
+├── bookstore.xml                    # Standalone XML Catalog data file
+├── bookstore.xsd                    # Standalone XML Schema Definition (XSD)
+├── bookstore.html                   # Standalone HTML frontend with embedded data
+├── Assignment_Submission_Document.md# Formatted essays & code documentation for submission
 ├── public/
-│   └── index.html          # Web frontend fetching /api/books dynamically
+│   └── index.html                   # Web frontend fetching /api/books dynamically
 └── data/
-    ├── bookstore.xml       # XML Catalog data file
-    ├── bookstore.xsd       # XML Schema Definition (XSD)
-    └── bookstore.json      # JSON Inventory data file
+    ├── bookstore.xml                # XML Catalog data file
+    ├── bookstore.xsd                # XML Schema Definition (XSD)
+    └── bookstore.json               # JSON Inventory data file
 ```
 
 ## Setup & Running
@@ -36,3 +41,6 @@ OnlineBookstore/
    * **JSON API**: [http://localhost:3000/api/books](http://localhost:3000/api/books)
    * **XML Catalog**: [http://localhost:3000/api/xml-catalog](http://localhost:3000/api/xml-catalog)
    * **XSD Schema**: [http://localhost:3000/api/schema](http://localhost:3000/api/schema)
+
+## License
+MIT
